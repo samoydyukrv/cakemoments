@@ -13,29 +13,19 @@ h1, h2 {
 
 .hero {
   height: 100vh;
-  background: url('/cakemoments/images/hero.jpg') center/cover no-repeat;
+  background: #ffefd5; /* мягкий светлый фон */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: #333;
   position: relative;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  animation: fadeInSmooth 1.2s ease-out forwards;
-  opacity: 0;
 }
 
 .hero-content h1 {
@@ -56,64 +46,4 @@ h1, h2 {
   text-decoration: none;
   border-radius: 25px;
   font-weight: 700;
-  transition: background-color 0.3s ease;
-}
-
-.hero a:hover {
-  background-color: #e67e22;
-}
-
-section {
-  padding: 3rem 1.5rem;
-  max-width: 900px;
-  margin: 0 auto 3rem auto;
-  text-align: center;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
-
-.contact a {
-  color: #d35400;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-
-@keyframes fadeInSmooth {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+  transition: background-color 0.3
