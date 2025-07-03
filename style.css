@@ -34,6 +34,8 @@ h1, h2 {
 .hero-content {
   position: relative;
   z-index: 2;
+  animation: fadeInSmooth 1.2s ease-out forwards;
+  opacity: 0;
 }
 
 .hero-content h1 {
@@ -102,5 +104,16 @@ section {
 
   .hero-content p {
     font-size: 1rem;
+  }
+}
+
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
