@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cake Moments - Торти на замовлення</title>
+  <!-- Подключаем шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Сброс и базовые стили */
     * {
       margin: 0;
       padding: 0;
@@ -13,7 +14,7 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Lora', serif;
       background: #fff7f8;
       color: #4a3c47;
       line-height: 1.6;
@@ -27,7 +28,6 @@
     ul {
       list-style: none;
     }
-    /* Меню */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -45,6 +45,7 @@
     }
     .logo {
       font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
       color: #9b2d44;
       letter-spacing: 1.5px;
@@ -53,9 +54,11 @@
     nav ul {
       display: flex;
       gap: 25px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
     }
     nav ul li a {
-      font-weight: 600;
       padding: 6px 10px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
@@ -65,10 +68,8 @@
       background-color: #9b2d44;
       color: white;
     }
-
-    /* Баннер */
     .banner {
-      margin-top: 65px; /* высота хедера */
+      margin-top: 65px;
       background: linear-gradient(135deg, #fbc2eb 0%, #a18cd1 100%);
       color: white;
       text-align: center;
@@ -76,18 +77,20 @@
       font-weight: 600;
       position: relative;
       user-select: none;
+      font-family: 'Montserrat', sans-serif;
     }
     .banner h1 {
       font-size: 3.2rem;
       margin-bottom: 20px;
       text-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      font-weight: 700;
     }
     .banner p {
       font-size: 1.25rem;
       margin-bottom: 35px;
-      font-weight: 400;
+      font-weight: 500;
     }
-    .banner .btn-group {
+    .btn-group {
       display: flex;
       justify-content: center;
       gap: 18px;
@@ -104,28 +107,27 @@
       cursor: pointer;
       transition: all 0.3s ease;
       user-select: none;
+      font-family: 'Montserrat', sans-serif;
     }
     .btn:hover {
       background-color: #9b2d44;
       color: white;
       box-shadow: 0 8px 20px rgba(155,45,68,0.8);
     }
-
-    /* Секции */
     section {
       max-width: 1100px;
       margin: 70px auto 90px;
       padding: 0 20px;
     }
     h2 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.6rem;
       margin-bottom: 25px;
       text-align: center;
       color: #9b2d44;
       letter-spacing: 1px;
+      font-weight: 700;
     }
-
-    /* Галерея */
     #gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
@@ -142,18 +144,15 @@
     #gallery img:hover {
       transform: scale(1.05);
     }
-
-    /* Тексты */
     .text-center {
       max-width: 700px;
       margin: 0 auto 15px;
       font-size: 1.1rem;
       color: #5f4a56;
       font-weight: 400;
+      font-family: 'Lora', serif;
       user-select: text;
     }
-
-    /* Контакты */
     #contacts a {
       color: #9b2d44;
       font-weight: 600;
@@ -161,8 +160,6 @@
     #contacts a:hover {
       text-decoration: underline;
     }
-
-    /* Отзывы */
     .reviews-list {
       display: flex;
       flex-direction: column;
@@ -178,6 +175,7 @@
       font-style: italic;
       font-size: 1.1rem;
       color: #6a4a59;
+      font-family: 'Lora', serif;
       user-select: text;
     }
     .review strong {
@@ -185,9 +183,8 @@
       margin-bottom: 8px;
       color: #9b2d44;
       font-style: normal;
+      font-family: 'Montserrat', sans-serif;
     }
-
-    /* Футер */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -195,9 +192,8 @@
       font-size: 0.9rem;
       user-select: none;
       border-top: 1px solid #f0d6dc;
+      font-family: 'Lora', serif;
     }
-
-    /* Мобильное меню - если понадобится позже, пока простое фикс меню */
     @media (max-width: 600px) {
       nav ul {
         gap: 14px;
@@ -216,6 +212,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
