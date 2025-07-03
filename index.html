@@ -1,232 +1,226 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cake Moments — Торти на замовлення</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cake Moments - Торти на замовлення</title>
+  <style>
+    /* Сброс и базовые стили */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff7f8;
+      color: #4a3c47;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+    }
+    /* Меню */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #f6d1d8;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #9b2d44;
+      letter-spacing: 1.5px;
+      user-select: none;
+    }
+    nav ul {
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #9b2d44;
+      color: white;
+    }
 
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #fff0f6;
-    color: #4a2e38;
-    scroll-behavior: smooth;
-  }
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: #fff;
-    box-shadow: 0 3px 10px rgba(255,105,180,0.2);
-    z-index: 1000;
-  }
-  nav {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1rem;
-  }
-  nav .logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 2.4rem;
-    color: #e91e63;
-    user-select: none;
-    letter-spacing: 2px;
-    text-shadow: 0 1px 5px rgba(233,30,99,0.3);
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.8rem;
-  }
-  nav ul li a {
-    text-decoration: none;
-    color: #7b486e;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 8px 12px;
-    border-radius: 10px;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  nav ul li a:hover,
-  nav ul li a:focus {
-    background: #e91e63;
-    color: white;
-    outline: none;
-    box-shadow: 0 0 8px #e91e63aa;
-  }
-
-  /* Banner */
-  .banner {
-    height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 70px;
-    text-align: center;
-    color: #5c2a44;
-    position: relative;
-    overflow: hidden;
-  }
-  .banner h1 {
-    font-family: 'Pacifico', cursive;
-    font-size: 4.8rem;
-    margin-bottom: 0.4rem;
-    line-height: 1;
-    text-shadow: 0 3px 10px rgba(231, 100, 150, 0.4);
-  }
-  .banner p {
-    font-size: 1.7rem;
-    margin-bottom: 2.5rem;
-    font-weight: 500;
-    max-width: 520px;
-    text-shadow: 0 2px 6px rgba(231, 100, 150, 0.3);
-  }
-  .btn-group {
-    display: flex;
-    gap: 1.6rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .btn {
-    background-color: #e91e63;
-    color: white;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(233,30,99,0.5);
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-  }
-  .btn:hover,
-  .btn:focus {
-    background-color: #c2185b;
-    transform: scale(1.07);
-    box-shadow: 0 12px 28px rgba(194,24,91,0.7);
-    outline: none;
-  }
-  .btn svg {
-    width: 22px;
-    height: 22px;
-    fill: white;
-  }
-
-  /* Sections */
-  section {
-    max-width: 960px;
-    margin: 5rem auto 3rem;
-    padding: 0 1rem;
-  }
-  section h2 {
-    color: #e91e63;
-    margin-bottom: 1.7rem;
-    border-bottom: 3px solid #e91e63;
-    padding-bottom: 0.35rem;
-    font-weight: 700;
-    font-size: 2.1rem;
-  }
-
-  /* Gallery grid */
-  #gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1.5rem;
-  }
-  #gallery img {
-    width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 15px 25px rgba(233,30,99,0.25);
-    object-fit: cover;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    cursor: pointer;
-  }
-  #gallery img:hover,
-  #gallery img:focus {
-    transform: scale(1.09);
-    box-shadow: 0 22px 40px rgba(233,30,99,0.45);
-    outline: none;
-  }
-
-  /* Text sections styling */
-  #about, #delivery, #payment, #reviews, #contacts {
-    font-size: 1.2rem;
-    line-height: 1.65;
-    color: #6a3750;
-  }
-
-  #reviews p {
-    font-style: italic;
-    margin-bottom: 1.1rem;
-    border-left: 5px solid #e91e63;
-    padding-left: 1.2rem;
-    color: #8e5387;
-  }
-
-  /* Contacts links */
-  #contacts a {
-    color: #e91e63;
-    text-decoration: none;
-    font-weight: 700;
-    transition: text-decoration 0.3s ease;
-  }
-  #contacts a:hover,
-  #contacts a:focus {
-    text-decoration: underline;
-    outline: none;
-  }
-
-  /* Responsive */
-  @media (max-width: 720px) {
+    /* Баннер */
+    .banner {
+      margin-top: 65px; /* высота хедера */
+      background: linear-gradient(135deg, #fbc2eb 0%, #a18cd1 100%);
+      color: white;
+      text-align: center;
+      padding: 90px 20px 70px;
+      font-weight: 600;
+      position: relative;
+      user-select: none;
+    }
     .banner h1 {
-      font-size: 3.8rem;
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
     .banner p {
-      font-size: 1.35rem;
-      max-width: 100%;
+      font-size: 1.25rem;
+      margin-bottom: 35px;
+      font-weight: 400;
     }
-    nav ul {
-      gap: 1.2rem;
-      font-size: 0.95rem;
-    }
-    section h2 {
-      font-size: 1.8rem;
-    }
-  }
-  @media (max-width: 440px) {
-    nav {
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-    nav ul {
-      flex-wrap: wrap;
+    .banner .btn-group {
+      display: flex;
       justify-content: center;
+      gap: 18px;
+    }
+    .btn {
+      background-color: #fff;
+      color: #a18cd1;
+      font-weight: 700;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(255,255,255,0.6);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .btn:hover {
+      background-color: #9b2d44;
+      color: white;
+      box-shadow: 0 8px 20px rgba(155,45,68,0.8);
+    }
+
+    /* Секции */
+    section {
+      max-width: 1100px;
+      margin: 70px auto 90px;
+      padding: 0 20px;
+    }
+    h2 {
+      font-size: 2.6rem;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #9b2d44;
+      letter-spacing: 1px;
+    }
+
+    /* Галерея */
+    #gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 20px;
+    }
+    #gallery img {
       width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(155,45,68,0.25);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .btn-group {
+    #gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Тексты */
+    .text-center {
+      max-width: 700px;
+      margin: 0 auto 15px;
+      font-size: 1.1rem;
+      color: #5f4a56;
+      font-weight: 400;
+      user-select: text;
+    }
+
+    /* Контакты */
+    #contacts a {
+      color: #9b2d44;
+      font-weight: 600;
+    }
+    #contacts a:hover {
+      text-decoration: underline;
+    }
+
+    /* Отзывы */
+    .reviews-list {
+      display: flex;
       flex-direction: column;
-      gap: 1.3rem;
+      gap: 25px;
+      max-width: 700px;
+      margin: 0 auto;
     }
-  }
-</style>
+    .review {
+      background: #fff0f2;
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 5px 12px rgba(155,45,68,0.1);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #6a4a59;
+      user-select: text;
+    }
+    .review strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #9b2d44;
+      font-style: normal;
+    }
+
+    /* Футер */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #a38891;
+      font-size: 0.9rem;
+      user-select: none;
+      border-top: 1px solid #f0d6dc;
+    }
+
+    /* Мобильное меню - если понадобится позже, пока простое фикс меню */
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 14px;
+        font-size: 14px;
+      }
+      .banner h1 {
+        font-size: 2.4rem;
+      }
+      .banner p {
+        font-size: 1rem;
+      }
+      .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="logo" tabindex="0">Cake Moments</div>
+    <div class="logo">Cake Moments</div>
     <ul>
       <li><a href="#gallery">Галерея</a></li>
       <li><a href="#about">Про мене</a></li>
@@ -238,65 +232,76 @@
   </nav>
 </header>
 
-<section class="banner" id="home" role="banner" aria-label="Головний банер">
-  <div class="banner-content" style="max-width: 600px; margin: 0 auto; text-align: center;">
-    <h1>Cake Moments</h1>
-    <p>Смачні торти на замовлення, які створюють святковий настрій</p>
-    <div class="btn-group">
-      <button class="btn" onclick="scrollToOrder()" aria-label="Замовити торт">Замовити</button>
-      <a href="https://instagram.com/cakemoments" target="_blank" rel="noopener" class="btn" aria-label="Перейти в Instagram Cake Moments">
-        Instagram
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.414a4.92 4.92 0 011.675 1.09 4.92 4.92 0 011.09 1.674c.174.462.36 1.26.413 2.43.058 1.27.07 1.652.07 4.854 0 3.2-.012 3.58-.07 4.85-.054 1.17-.24 1.97-.414 2.43a4.92 4.92 0 01-1.09 1.675 4.92 4.92 0 01-1.675 1.09c-.46.174-1.26.36-2.43.414-1.27.058-1.65.07-4.85.07-3.2 0-3.58-.012-4.85-.07-1.17-.054-1.97-.24-2.43-.414a4.92 4.92 0 01-1.675-1.09 4.92 4.92 0 01-1.09-1.675c-.174-.46-.36-1.26-.414-2.43-.058-1.27-.07-1.65-.07-4.85 0-3.2.012-3.58.07-4.85.054-1.17.24-1.97.414-2.43a4.92 4.92 0 011.09-1.675 4.92 4.92 0 011.675-1.09c.46-.174 1.26-.36 2.43-.414 1.27-.058 1.65-.07 4.85-.07zM12 0C8.74 0 8.332.014 7.053.073 5.77.13 4.667.36 3.757.81a6.92 6.92 0 00-2.5 1.63A6.92 6.92 0 00.81 4.758c-.45.91-.68 2.014-.737 3.298C.014 8.332 0 8.74 0 12c0 3.26.014 3.668.073 4.947.058 1.283.287 2.386.737 3.296a6.92 6.92 0 001.63 2.5 6.92 6.92 0 002.5 1.63c.91.45 2.014.68 3.297.738 1.28.059 1.688.073 4.947.073 3.26 0 3.668-.014 4.947-.073 1.283-.058 2.387-.287 3.297-.738a6.92 6.92 0 002.5-1.63 6.92 6.92 0 001.63-2.5c.45-.91.68-2.014.738-3.297.059-1.28.073-1.688.073-4.947 0-3.26-.014-3.668-.073-4.947-.058-1.283-.287-2.387-.738-3.297a6.92 6.92 0 00-1.63-2.5 6.92 6.92 0 00-2.5-1.63c-.91-.45-2.014-.68-3.297-.738C15.668.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-      </a>
+<section class="banner">
+  <h1>Смачні торти на замовлення</h1>
+  <p>Робимо ваші солодкі моменти незабутніми</p>
+  <div class="btn-group">
+    <button class="btn" onclick="window.location.href='https://instagram.com/cakemoments'">Instagram</button>
+    <button class="btn" onclick="alert('Дякуємо за замовлення! Ми зв’яжемося з вами найближчим часом.')">Замовити</button>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Галерея</h2>
+  <div id="gallery">
+    <img src="https://images.unsplash.com/photo-1604917877933-0a4af7a5d960?auto=format&fit=crop&w=600&q=80" alt="Торт 1" />
+    <img src="https://images.unsplash.com/photo-1551024601-bec78faa6a0f?auto=format&fit=crop&w=600&q=80" alt="Торт 2" />
+    <img src="https://images.unsplash.com/photo-1505253210343-4d147d0d5936?auto=format&fit=crop&w=600&q=80" alt="Торт 3" />
+    <img src="https://images.unsplash.com/photo-1510626176961-4b58c8d5a9d1?auto=format&fit=crop&w=600&q=80" alt="Торт 4" />
+  </div>
+</section>
+
+<section id="about">
+  <h2>Про мене</h2>
+  <p class="text-center">
+    Я — кондитер з любов’ю до своєї справи. Кожен торт роблю з турботою про вас і ваші святкові миті.
+  </p>
+</section>
+
+<section id="delivery">
+  <h2>Доставка</h2>
+  <p class="text-center">
+    Доставка по місту протягом 24 годин. Можлива самовивіз або доставка кур’єром. Підтвердження за телефоном.
+  </p>
+</section>
+
+<section id="payment">
+  <h2>Оплата</h2>
+  <p class="text-center">
+    Приймаємо оплату готівкою, карткою або через банківський переказ. Підтвердження оплати обов’язкове.
+  </p>
+</section>
+
+<section id="reviews">
+  <h2>Відгуки</h2>
+  <div class="reviews-list">
+    <div class="review">
+      <strong>Олена</strong>
+      Дуже смачний торт і швидка доставка! Рекомендую всім.
+    </div>
+    <div class="review">
+      <strong>Іван</strong>
+      Чудова якість і красивий дизайн, дякую за професіоналізм.
+    </div>
+    <div class="review">
+      <strong>Марія</strong>
+      Торт був прикрасою нашого свята, всі залишилися в захваті.
     </div>
   </div>
 </section>
 
-<section id="gallery" tabindex="-1" aria-label="Галерея тортів">
-  <h2>Галерея</h2>
-  <div>
-    <img src="https://images.unsplash.com/photo-1562440499-2e31f84d0d29?auto=format&fit=crop&w=600&q=80" alt="Торт з полуницями" tabindex="0" />
-    <img src="https://images.unsplash.com/photo-1505253210343-569daf6ec7da?auto=format&fit=crop&w=600&q=80" alt="Кремовий торт з шоколадом" tabindex="0" />
-    <img src="https://images.unsplash.com/photo-1559628236-41dd8a7ef2b9?auto=format&fit=crop&w=600&q=80" alt="Яскравий святковий торт" tabindex="0" />
-    <img src="https://images.unsplash.com/photo-1523475496153-3c3d3d8b169b?auto=format&fit=crop&w=600&q=80" alt="Торт з квітами" tabindex="0" />
-  </div>
-</section>
-
-<section id="about" tabindex="-1" aria-label="Про кондитера">
-  <h2>Про мене</h2>
-  <p>Я - кондитер із пристрастю до створення унікальних тортів, які роблять будь-яке свято незабутнім. Використовую тільки якісні інгредієнти і люблю індивідуальний підхід до кожного замовлення.</p>
-</section>
-
-<section id="delivery" tabindex="-1" aria-label="Інформація про доставку">
-  <h2>Доставка</h2>
-  <p>Доставляємо торти по Києву та області. Термін доставки – від 2 до 5 днів залежно від складності замовлення. Можлива самовивіз.</p>
-</section>
-
-<section id="payment" tabindex="-1" aria-label="Інформація про оплату">
-  <h2>Оплата</h2>
-  <p>Оплата на карту або готівкою при отриманні. Також можливий безготівковий розрахунок для корпоративних клієнтів.</p>
-</section>
-
-<section id="reviews" tabindex="-1" aria-label="Відгуки клієнтів">
-  <h2>Відгуки</h2>
-  <p>“Найсмачніший торт, який я коли-небудь замовляла! Дякую Cake Moments!” – Олена</p>
-  <p>“Дуже швидка доставка і якісний сервіс. Рекомендую!” – Ігор</p>
-</section>
-
-<section id="contacts" tabindex="-1" aria-label="Контактна інформація">
+<section id="contacts">
   <h2>Контакти</h2>
-  <p>Телефон: <a href="tel:+380501234567" aria-label="Телефонний номер">+38 (050) 123-45-67</a></p>
-  <p>Email: <a href="mailto:cakemoments@example.com" aria-label="Email адреса">cakemoments@example.com</a></p>
-  <p>Instagram: <a href="https://instagram.com/cakemoments" target="_blank" rel="noopener" aria-label="Instagram акаунт">@cakemoments</a></p>
+  <p class="text-center">
+    Телефон: <a href="tel:+380123456789">+38 012 345 67 89</a><br />
+    Email: <a href="mailto:info@cakemoments.ua">info@cakemoments.ua</a><br />
+    Instagram: <a href="https://instagram.com/cakemoments" target="_blank">@cakemoments</a>
+  </p>
 </section>
 
-<script>
-  function scrollToOrder() {
-    const contactsSection = document.getElementById('contacts');
-    contactsSection.scrollIntoView({ behavior: 'smooth' });
-    contactsSection.querySelector('a[href^="tel"]').focus();
-  }
-</script>
+<footer>
+  &copy; 2025 Cake Moments — всі права захищені
+</footer>
 
 </body>
 </html>
