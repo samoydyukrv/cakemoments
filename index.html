@@ -1,51 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cake Moments</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cake Moments — Торти на замовлення</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff8f0;
+    color: #5a3e36;
+    scroll-behavior: smooth;
+  }
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #c85c4d;
+    letter-spacing: 1px;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li {
+    cursor: pointer;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #5a3e36;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #c85c4d;
+  }
+
+  /* Banner */
+  .banner {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px; /* header height */
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  }
+  .banner h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Brush Script MT', cursive;
+  }
+  .banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .btn-group {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .btn {
+    background-color: #c85c4d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgb(200 92 77 / 0.5);
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn:hover {
+    background-color: #a8483c;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  section h2 {
+    color: #c85c4d;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #c85c4d;
+    padding-bottom: 0.3rem;
+    font-weight: 700;
+  }
+
+  /* Gallery */
+  #gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1rem;
+  }
+  #gallery img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  #gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Text sections */
+  #about, #delivery, #payment, #reviews, #contacts {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  /* Footer contacts styling */
+  #contacts a {
+    color: #c85c4d;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  #contacts a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    .banner h1 {
+      font-size: 2.2rem;
+    }
+  }
+</style>
 </head>
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Cake Moments</h1>
-      <p>Your sweetest moments — our best cakes.</p>
-      <a href="https://instagram.com/yourprofile" target="_blank" class="btn">
-        Order on Instagram
-      </a>
-    </div>
-  </header>
+<header>
+  <nav>
+    <div class="logo">Cake Moments</div>
+    <ul>
+      <li><a href="#gallery">Галерея</a></li>
+      <li><a href="#about">Про мене</a></li>
+      <li><a href="#delivery">Доставка</a></li>
+      <li><a href="#payment">Оплата</a></li>
+      <li><a href="#reviews">Відгуки</a></li>
+      <li><a href="#contacts">Контакти</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      We create beautiful and delicious custom cakes for every occasion. Made with love and the best ingredients.
-    </p>
-  </section>
+<section class="banner" id="home">
+  <h1>Cake Moments</h1>
+  <p>Смачні торти на замовлення, які створюють святковий настрій</p>
+  <div class="btn-group">
+    <button class="btn" onclick="scrollToOrder()">Замовити</button>
+    <a href="https://instagram.com/cakemoments" target="_blank" class="btn">Instagram</a>
+  </div>
+</section>
 
-  <section class="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="images/cake1.avif" alt="Cake 1" />
-      <img src="images/cake2.avif" alt="Cake 2" />
-      <img src="images/cake3.avif" alt="Cake 3" />
-      <img src="images/cake4.avif" alt="Cake 4" />
-    </div>
-  </section>
+<section id="gallery">
+  <h2>Галерея</h2>
+  <div>
+    <img src="https://images.unsplash.com/photo-1562440499-2e31f84d0d29?auto=format&fit=crop&w=600&q=80" alt="Торт 1" />
+    <img src="https://images.unsplash.com/photo-1505253210343-569daf6ec7da?auto=format&fit=crop&w=600&q=80" alt="Торт 2" />
+    <img src="https://images.unsplash.com/photo-1559628236-41dd8a7ef2b9?auto=format&fit=crop&w=600&q=80" alt="Торт 3" />
+    <img src="https://images.unsplash.com/photo-1523475496153-3c3d3d8b169b?auto=format&fit=crop&w=600&q=80" alt="Торт 4" />
+  </div>
+</section>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>Ready to order? Message us on Instagram!</p>
-    <a href="https://instagram.com/yourprofile" target="_blank" class="btn">
-      @yourprofile
-    </a>
-  </section>
+<section id="about">
+  <h2>Про мене</h2>
+  <p>Я - кондитер із пристрастю до створення унікальних тортів, які роблять будь-яке свято незабутнім. Використовую тільки якісні інгредієнти і люблю індивідуальний підхід до кожного замовлення.</p>
+</section>
+
+<section id="delivery">
+  <h2>Доставка</h2>
+  <p>Доставляємо торти по Києву та області. Термін доставки – від 2 до 5 днів залежно від складності замовлення. Можлива самовивіз.</p>
+</section>
+
+<section id="payment">
+  <h2>Оплата</h2>
+  <p>Оплата на карту або готівкою при отриманні. Також можливий безготівковий розрахунок для корпоративних клієнтів.</p>
+</section>
+
+<section id="reviews">
+  <h2>Відгуки</h2>
+  <p>“Найсмачніший торт, який я коли-небудь замовляла! Дякую Cake Moments!” – Олена</p>
+  <p>“Дуже швидка доставка і якісний сервіс. Рекомендую!” – Ігор</p>
+</section>
+
+<section id="contacts">
+  <h2>Контакти</h2>
+  <p>Телефон: <a href="tel:+380501234567">+38 (050) 123-45-67</a></p>
+  <p>Email: <a href="mailto:cakemoments@example.com">cakemoments@example.com</a></p>
+  <p>Instagram: <a href="https://instagram.com/cakemoments" target="_blank">@cakemoments</a></p>
+</section>
+
+<script>
+  function scrollToOrder() {
+    // Можно прокрутить к разделу контактов (где телефон) или к форме, если добавишь
+    const contactsSection = document.getElementById('contacts');
+    contactsSection.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
