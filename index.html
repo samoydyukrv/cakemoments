@@ -62,6 +62,22 @@
     <p>Ready to order your dream cake? Send us a message on Instagram!</p>
     <a href="https://instagram.com/yourprofile" target="_blank">@yourprofile</a>
   </section>
+  <button id="scrollTopBtn" title="Go to top">↑</button>
 
+  <script>
+    const scrollBtn = document.getElementById('scrollTopBtn');
+  
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+  
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
