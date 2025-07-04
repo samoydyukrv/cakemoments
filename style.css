@@ -122,13 +122,12 @@ header {
   margin-bottom: 10px;
 }
 
-/* Добавляем эффект фокуса */
-.cakes-carousel:has(.cake-card:hover) .cake-card {
+.cake-card.blur {
   filter: blur(2px) brightness(0.8);
   transform: scale(0.9);
 }
 
-.cakes-carousel .cake-card:hover {
+.cake-card.active {
   filter: none;
   transform: scale(1);
   z-index: 1;
