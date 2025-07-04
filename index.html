@@ -82,35 +82,32 @@
 const carousel = document.querySelector('.cakes-carousel');
 const cards = document.querySelectorAll('.cake-card');
 
-function updateActiveCard() {
-  let closestCard = null;
-  let closestDistance = Infinity;
+function updateFocusCards() {
+  let distances = [];
 
   cards.forEach(card => {
     const rect = card.getBoundingClientRect();
     const center = window.innerWidth / 2;
     const cardCenter = rect.left + rect.width / 2;
     const distance = Math.abs(center - cardCenter);
-
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closestCard = card;
-    }
+    distances.push({ card, distance });
   });
 
-  cards.forEach(card => card.classList.add('blur'));
-  if (closestCard) {
-    closestCard.classList.remove('blur');
-    closestCard.classList.add('active');
-  }
+  distances.sort((a, b) => a.distance - b.distance);
+
+  cards.forEach(c => c.classList.add('blur'));
+  distances.slice(0, 3).forEach(({ card }) => {
+    card.classList.remove('blur');
+    card.classList.add('focus');
+  });
 }
 
 carousel.addEventListener('scroll', () => {
-  window.requestAnimationFrame(updateActiveCard);
+  window.requestAnimationFrame(updateFocusCards);
 });
 
 window.addEventListener('load', () => {
-  updateActiveCard();
+  updateFocusCards();
 });
 </script>
 </body>
