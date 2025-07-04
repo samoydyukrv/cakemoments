@@ -30,7 +30,7 @@
   </div>
 </header>
 
-<section id="cakes">
+<!-- <section id="cakes">
   <h2>Our Cakes</h2>
   <div class="cakes-carousel">
     <div class="cake-card">
@@ -58,6 +58,83 @@
       <h3>Prosto Cake</h3>
     </div>
   </div>
+</section> -->
+
+<section id="cakes">
+  <h2>Our Cakes</h2>
+  <div class="cakes-carousel">
+    <div class="cake-card">
+      <div class="cake-card-inner">
+        <div class="cake-card-front">
+          <img src="images/cake1.avif" alt="Chocolate Cake" />
+          <h3>Chocolate Cake</h3>
+        </div>
+        <div class="cake-card-back">
+          <p>Rich and moist chocolate cake with layers of creamy ganache and fresh berries.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cake-card">
+      <div class="cake-card-inner">
+        <div class="cake-card-front">
+          <img src="images/cake2.avif" alt="Carrot Cake" />
+          <h3>Carrot Cake</h3>
+        </div>
+        <div class="cake-card-back">
+          <p>Delicious carrot cake with cream cheese frosting and a hint of cinnamon.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cake-card">
+      <div class="cake-card-inner">
+        <div class="cake-card-front">
+          <img src="images/cake2.avif" alt="New Cake" />
+          <h3>New Cake</h3>
+        </div>
+        <div class="cake-card-back">
+          <p>A brand new creation with surprise flavors and fresh ingredients.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cake-card">
+      <div class="cake-card-inner">
+        <div class="cake-card-front">
+          <img src="images/cake3.avif" alt="Lemon Cake" />
+          <h3>Lemon Cake</h3>
+        </div>
+        <div class="cake-card-back">
+          <p>Light and zesty lemon cake topped with smooth lemon glaze.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cake-card">
+      <div class="cake-card-inner">
+        <div class="cake-card-front">
+          <img src="images/cake3.avif" alt="Chessse Cake" />
+          <h3>Chessse Cake</h3>
+        </div>
+        <div class="cake-card-back">
+          <p>Creamy cheesecake with a buttery graham cracker crust and fresh berries.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cake-card">
+      <div class="cake-card-inner">
+        <div class="cake-card-front">
+          <img src="images/cake3.avif" alt="Prosto Cake" />
+          <h3>Prosto Cake</h3>
+        </div>
+        <div class="cake-card-back">
+          <p>A simple yet delicious cake perfect for any occasion.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
@@ -81,6 +158,12 @@
       if(target) {
         target.scrollIntoView({ behavior: 'smooth' });
       }
+    });
+  });
+
+  document.querySelectorAll('.cake-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
     });
   });
 </script>
