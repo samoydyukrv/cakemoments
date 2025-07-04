@@ -96,7 +96,7 @@ header {
   margin-bottom: 30px;
 }
 
-.cakes-carousel {
+/* .cakes-carousel {
   display: flex;
   overflow-x: auto;
   gap: 20px;
@@ -107,7 +107,7 @@ header {
 
 .cakes-carousel::-webkit-scrollbar {
   display: none;
-}
+} */
 
 /* .cake-card {
   flex: 0 0 250px;
@@ -137,6 +137,25 @@ header {
   z-index: 1;
 } */
 
+.cakes-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cake-card {
+  flex: 0 0 250px; /* фикс ширины карточек */
+  scroll-snap-align: center;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  height: 350px;
+  box-sizing: border-box;
+}
 .cake-card.blur {
   filter: blur(3px) brightness(0.8);
   transform: scale(0.9);
@@ -147,13 +166,13 @@ header {
   transform: scale(1);
   z-index: 1;
 }
-.cake-card {
+/* .cake-card {
   perspective: 1000px;
   cursor: pointer;
   position: relative;
   user-select: none;
   height: 350px;
-}
+} */
 
 .cake-card-inner {
   position: relative;
