@@ -152,10 +152,9 @@ header {
   cursor: pointer;
   position: relative;
   user-select: none;
-  padding: 0; /* убираем паддинг из основного блока, перенесём внутрь */
-  height: 350px; /* фиксируем высоту, чтобы переворот был аккуратный */
-  overflow: visible;
+  height: 350px;
 }
+
 .cake-card-inner {
   position: relative;
   width: 100%;
@@ -168,17 +167,17 @@ header {
   padding: 15px;
   box-sizing: border-box;
 }
+
 .cake-card.flipped .cake-card-inner {
   transform: rotateY(180deg);
 }
-.cake-card-front,
-.cake-card-back {
+
+.cake-card-front, .cake-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 8px;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,16 +185,17 @@ header {
   text-align: center;
   box-sizing: border-box;
 }
+
 .cake-card-front img {
   width: 100%;
   border-radius: 8px 8px 0 0;
   margin-bottom: 10px;
-  flex-shrink: 0;
 }
+
 .cake-card-front h3 {
   margin: 10px 0 0;
-  flex-shrink: 0;
 }
+
 .cake-card-back {
   background: #fef9f5;
   color: #3e2f2f;
