@@ -78,5 +78,40 @@
     });
   });
 </script>
+<script>
+const carousel = document.querySelector('.cakes-carousel');
+const cards = document.querySelectorAll('.cake-card');
+
+function updateActiveCard() {
+  let closestCard = null;
+  let closestDistance = Infinity;
+
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const center = window.innerWidth / 2;
+    const cardCenter = rect.left + rect.width / 2;
+    const distance = Math.abs(center - cardCenter);
+
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestCard = card;
+    }
+  });
+
+  cards.forEach(card => card.classList.add('blur'));
+  if (closestCard) {
+    closestCard.classList.remove('blur');
+    closestCard.classList.add('active');
+  }
+}
+
+carousel.addEventListener('scroll', () => {
+  window.requestAnimationFrame(updateActiveCard);
+});
+
+window.addEventListener('load', () => {
+  updateActiveCard();
+});
+</script>
 </body>
 </html>
