@@ -209,24 +209,20 @@ footer {
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap');
 
 body {
+  font-family: sans-serif;
+  background: #fffdf7;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fffdf7;
+  padding: 20px;
   color: #2d2d2d;
-  scroll-behavior: smooth;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.top-bar {
+header {
+  background: #fef9f5;
+  padding: 15px 30px;
+  font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  font-weight: bold;
   flex-wrap: wrap;
 }
 
@@ -235,226 +231,62 @@ nav {
   gap: 15px;
 }
 
-nav a {
-  font-size: 0.9em;
-}
-
-header {
-  background-color: #fef9f5;
-}
-
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 250px;
-  text-align: center;
-  animation: fadeInUp 1s ease;
-}
-
-.hero-text h1 {
-  font-size: 2em;
-  margin: 0;
-}
-
-.hero-text p {
-  font-size: 1.1em;
-  color: #555;
-}
-
-.order-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #3e2f2f;
-  color: #fff;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.order-btn:hover {
-  background: #5c4444;
-}
-
-.hero-img {
-  flex: 1;
-  min-width: 250px;
-  text-align: center;
-  animation: fadeInUp 1.5s ease;
-}
-
-.hero-img img {
-  max-width: 300px;
-  border-radius: 50%;
-}
-
 #cakes {
-  padding: 50px 20px;
   text-align: center;
+  margin-top: 20px;
 }
 
-#cakes h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-}
-
-.cakes-carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.cakes-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.cake-card {
-  flex: 0 0 250px;
-  scroll-snap-align: center;
+.card {
   perspective: 1000px;
   cursor: pointer;
-  position: relative;
-  user-select: none;
-  height: 350px;
-  box-sizing: border-box;
+  height: 300px;
 }
 
-.cake-card-inner {
+.card-inner {
   position: relative;
   width: 100%;
   height: 100%;
+  text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   background: #fff;
-  padding: 15px;
-  box-sizing: border-box;
 }
 
-.cake-card.flipped .cake-card-inner {
+.card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
-.cake-card-front, .cake-card-back {
+.card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
   backface-visibility: hidden;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  box-sizing: border-box;
+  align-items: center;
 }
 
-.cake-card-front img {
+.card-front {
+  background: #fff;
+}
+
+.card-front img {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px 8px 0 0;
-  margin-bottom: 10px;
 }
 
-.cake-card-front h3 {
-  margin: 10px 0 0;
+.card-front h3 {
+  margin: 10px 0;
 }
 
-.cake-card-back {
-  background: #fef9f5;
-  color: #3e2f2f;
+.card-back {
+  background: #ffe;
   transform: rotateY(180deg);
   padding: 20px;
-  font-size: 1em;
-  line-height: 1.4;
-  overflow-y: auto;
-}
-
-/* Фокус и блюр для эффекта */
-.cake-card.blur {
-  filter: blur(3px) brightness(0.8);
-  transform: scale(0.9);
-}
-
-.cake-card.focus {
-  filter: none;
-  transform: scale(1);
-  z-index: 1;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #fef9f5;
-  font-size: 0.9em;
-}
-
-.fancy-title {
-  font-family: 'Pacifico', cursive;
-  font-size: 7em;
-  color: #3e2f2f;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  margin: 0;
-}
-
-.fancy-subtitle {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3em;
-  color: #a75d5d;
-  margin: 10px 0 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-}
-
-#about {
-  background: #fef1f5;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.about-text {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Адаптивность */
-@media (max-width: 600px) {
-  .top-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero {
-    flex-direction: column;
-  }
-
-  .hero-text h1 {
-    font-size: 1.5em;
-  }
-
-  .hero-img img {
-    max-width: 200px;
-  }
 }
