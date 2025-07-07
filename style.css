@@ -212,7 +212,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #fffdf7;
-  color: #2d2d2d;
+  color: #3e2f2f;
   scroll-behavior: smooth;
 }
 
@@ -226,17 +226,26 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  font-weight: bold;
   flex-wrap: wrap;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5em;
+  color: #3e2f2f;
 }
 
 nav {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9em;
 }
 
 nav a {
-  font-size: 0.9em;
+  color: #3e2f2f;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #a75d5d;
 }
 
 header {
@@ -259,13 +268,18 @@ header {
 }
 
 .hero-text h1 {
-  font-size: 2em;
+  font-family: 'Pacifico', cursive;
+  font-size: 4em;
   margin: 0;
+  color: #3e2f2f;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .hero-text p {
-  font-size: 1.1em;
-  color: #555;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  color: #a75d5d;
+  margin: 10px 0 20px;
 }
 
 .order-btn {
@@ -275,11 +289,12 @@ header {
   background: #3e2f2f;
   color: #fff;
   border-radius: 5px;
+  font-size: 1em;
   transition: background 0.3s;
 }
 
 .order-btn:hover {
-  background: #5c4444;
+  background: #a75d5d;
 }
 
 .hero-img {
@@ -300,8 +315,10 @@ header {
 }
 
 #cakes h2 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 30px;
+  font-family: 'Pacifico', cursive;
+  color: #3e2f2f;
 }
 
 footer {
@@ -309,22 +326,7 @@ footer {
   padding: 20px;
   background-color: #fef9f5;
   font-size: 0.9em;
-}
-
-.fancy-title {
-  font-family: 'Pacifico', cursive;
-  font-size: 4em;
-  color: #3e2f2f;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  margin: 0;
-}
-
-.fancy-subtitle {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2em;
-  color: #a75d5d;
-  margin: 10px 0 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  color: #777;
 }
 
 #about {
@@ -352,7 +354,8 @@ footer {
   }
 }
 
-/* Splide & карточки */
+/* Splide + Flip Cards */
+
 .splide__slide {
   perspective: 1000px;
 }
@@ -371,7 +374,7 @@ footer {
   transition: transform 0.6s;
   transform-style: preserve-3d;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   background: #fff;
   overflow: hidden;
 }
@@ -403,6 +406,7 @@ footer {
 
 .cake-card-front h3 {
   margin: 10px 0 0;
+  font-size: 1.2em;
 }
 
 .cake-card-back {
@@ -412,9 +416,9 @@ footer {
   font-size: 1em;
   line-height: 1.4;
   overflow-y: auto;
+  padding: 20px;
 }
 
-/* адаптивность */
 @media (max-width: 600px) {
   .top-bar {
     flex-direction: column;
@@ -426,6 +430,10 @@ footer {
   }
 
   .hero-text h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-text p {
     font-size: 1.5em;
   }
 
@@ -433,4 +441,3 @@ footer {
     max-width: 200px;
   }
 }
-
