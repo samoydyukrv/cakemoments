@@ -1,106 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cake Shop</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cake Moments</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
-  <div class="top-bar">
-    <div class="logo">CAKE SHOP</div>
-    <nav>
-      <a href="#cakes">Our Cakes</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<div class="top-bar">
+  <div class="logo">CAKE SHOP</div>
+  <nav>
+    <a href="#cakes">Our Cakes</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+<div class="hero">
+  <div class="hero-text">
+    <h1 class="fancy-title">Cake Moments</h1>
+    <p class="fancy-subtitle">Made with love</p>
+    <a href="#cakes" class="order-btn">ORDER NOW</a>
   </div>
+  <div class="hero-img">
+    <img src="images/hero.png" alt="Cake" />
+  </div>
+</div>
 </header>
 
 <section id="cakes">
-  <h2>Our Cakes</h2>
-  <div class="splide" id="cakes-carousel">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">
-          <div class="cake-card">
-            <div class="cake-card-inner">
-              <div class="cake-card-front">
-                <img src="images/cake1.avif" alt="Chocolate Cake">
-                <h3>Chocolate Cake</h3>
-              </div>
-              <div class="cake-card-back">
-                <p>Rich and moist chocolate cake with layers of creamy ganache and fresh berries.</p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div class="cake-card">
-            <div class="cake-card-inner">
-              <div class="cake-card-front">
-                <img src="images/cake2.avif" alt="Carrot Cake">
-                <h3>Carrot Cake</h3>
-              </div>
-              <div class="cake-card-back">
-                <p>Delicious carrot cake with cream cheese frosting and a hint of cinnamon.</p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div class="cake-card">
-            <div class="cake-card-inner">
-              <div class="cake-card-front">
-                <img src="images/cake3.avif" alt="Lemon Cake">
-                <h3>Lemon Cake</h3>
-              </div>
-              <div class="cake-card-back">
-                <p>Light and zesty lemon cake topped with smooth lemon glaze.</p>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+<h2>Our Cakes</h2>
+<div class="cakes-carousel">
+  <!-- карточки -->
+  <div class="cake-card">
+    <div class="cake-card-inner">
+      <div class="cake-card-front">
+        <img src="images/cake1.avif" alt="Chocolate Cake" />
+        <h3>Chocolate Cake</h3>
+      </div>
+      <div class="cake-card-back">
+        <p>Rich and moist chocolate cake with layers of creamy ganache and fresh berries.</p>
+      </div>
     </div>
   </div>
+  <div class="cake-card">
+    <div class="cake-card-inner">
+      <div class="cake-card-front">
+        <img src="images/cake2.avif" alt="Carrot Cake" />
+        <h3>Carrot Cake</h3>
+      </div>
+      <div class="cake-card-back">
+        <p>Delicious carrot cake with cream cheese frosting and a hint of cinnamon.</p>
+      </div>
+    </div>
+  </div>
+  <div class="cake-card">
+    <div class="cake-card-inner">
+      <div class="cake-card-front">
+        <img src="images/cake3.avif" alt="Lemon Cake" />
+        <h3>Lemon Cake</h3>
+      </div>
+      <div class="cake-card-back">
+        <p>Light and zesty lemon cake topped with smooth lemon glaze.</p>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p class="about-text">
-    Hi! I’m Anna, a passionate baker who believes that cakes are more than just desserts — they’re moments of happiness. 
-    Every cake is handcrafted with love, fresh ingredients, and a sprinkle of magic to make your day sweeter!
-  </p>
+<h2>About Me</h2>
+<p class="about-text">
+Hi! I’m Anna, a passionate baker who believes that cakes are more than just desserts — they’re moments of happiness. Every cake is handcrafted with love, fresh ingredients, and a sprinkle of magic to make your day sweeter!
+</p>
 </section>
 
 <footer id="contact">
-  <p>&copy; 2025 Cake Shop. All rights reserved.</p>
+<p>&copy; 2025 Cake Shop. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  new Splide('#cakes-carousel', {
-    type: 'loop',
-    perPage: 3,
-    focus: 'center',
-    gap: '1rem',
-    breakpoints: { 768: { perPage: 1 } }
-  }).mount();
-
-  const cards = document.querySelectorAll('.cake-card');
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => { if (c !== card) c.classList.remove('flipped'); });
-      card.classList.toggle('flipped');
-    });
+// плавный скролл
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// flip
+document.querySelectorAll('.cake-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.cake-card.flipped').forEach(c => {
+      if (c !== card) c.classList.remove('flipped');
+    });
+    card.classList.toggle('flipped');
+  });
+});
+
+// бесконечный скролл
+const carousel = document.querySelector('.cakes-carousel');
+let cards = Array.from(carousel.querySelectorAll('.cake-card'));
+const cardCount = cards.length;
+
+for (let i = 0; i < 3; i++) {
+  carousel.appendChild(cards[i].cloneNode(true));
+}
+for (let i = cardCount - 3; i < cardCount; i++) {
+  carousel.insertBefore(cards[i].cloneNode(true), carousel.firstChild);
+}
+
+cards = Array.from(carousel.querySelectorAll('.cake-card'));
+const cardStyle = getComputedStyle(cards[0]);
+const cardWidth = cards[0].offsetWidth + parseInt(cardStyle.marginRight || 20);
+carousel.scrollLeft = cardWidth * 3;
+
+carousel.addEventListener('scroll', () => {
+  if (carousel.scrollLeft <= 0) {
+    carousel.scrollLeft = cardWidth * cardCount;
+  } else if (carousel.scrollLeft >= cardWidth * (cardCount + 3)) {
+    carousel.scrollLeft = cardWidth * 3;
+  }
+});
 </script>
+
 </body>
 </html>
