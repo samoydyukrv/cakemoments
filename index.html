@@ -163,9 +163,21 @@
 
   document.querySelectorAll('.cake-card').forEach(card => {
     card.addEventListener('click', () => {
+      // Сначала закрываем все карточки
+      document.querySelectorAll('.cake-card.flipped').forEach(openedCard => {
+        if (openedCard !== card) {
+          openedCard.classList.remove('flipped');
+        }
+      });
+      // Переключаем текущую
       card.classList.toggle('flipped');
     });
   });
+  // document.querySelectorAll('.cake-card').forEach(card => {
+  //   card.addEventListener('click', () => {
+  //     card.classList.toggle('flipped');
+  //   });
+  // });
 </script>
 
 <script>
